@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->string('photo',20)->unique();
+            $table->string('photo',255)->unique();
             $table->bigInteger('advert_id')->unsigned()->index();
             $table->timestamps();
             $table->foreign('advert_id')->references('id')->on('adverts');
